@@ -1,0 +1,19 @@
+[package]
+authors = ["Josh Palmer <jpalmerwatkins@gmail.com>"]
+edition = "2018"
+name = "database_api"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+async = ["async-trait", "async-std"]
+default = ["parking_lot", "async"]
+
+[dependencies]
+database_api_macros = {path = "../database_api_macros"}
+fnv = "1.0.7"
+
+async-std = {version = "1.9.0", optional = true}
+async-trait = {version = "0.1.50", optional = true}
+parking_lot = {version = "0.11.1", optional = true}
